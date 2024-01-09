@@ -42,7 +42,6 @@ export default function AddUser(){
                     e.preventDefault();
                     postData()
                 }}></input>
-                
             </form>
         </main>
     )

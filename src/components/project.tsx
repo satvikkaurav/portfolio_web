@@ -13,7 +13,17 @@ export const Project = (props: Props) => {
         <div className={'flex bg-white rounded-2xl' + (props.flag===1 ? ' flex-row-reverse':'flex-row')}>
             <div className={'flex flex-col flex-1 p-10 gap-5 justify-center'}>
               <div className='flex font-medium text-2xl'>{props.data.name}</div>
-              <div className='flex text-gray-500'>{props.data.description}</div>
+              <div className='flex text-gray-500 flex-col'>
+                {
+                  props.data.description.map((val:any,key:any)=>{
+                    return(
+                      <>
+                        <li key ={key}>{val}</li>
+                      </>
+                    )
+                  })
+                }
+              </div>
               <Link href = {props.data.link} target='blank'>
               <button className='border-2 border-black font-medium rounded-3xl px-8 py-2 w-1/2'>
                 View Project</button></Link>

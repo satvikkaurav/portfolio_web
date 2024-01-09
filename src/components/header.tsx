@@ -12,7 +12,7 @@ export default function Header({}: Props) {
           <div className='font-semibold text-xl underline'>Satvik Kaurav</div>
           <div className='flex flex-row gap-5'>
             <Link href ="/" ><div className={['cursor-pointer',router.pathname=="/" ? "border-b-4 border-teal-500":""].join(" ")}>Home</div></Link>
-            <Link href = "/"><div className={['cursor-pointer' , router.pathname=="/projects" ? "border-b-4 border-teal-500":""].join(" ")}>Projects</div></Link>
+            <Link href = "/#projects" ><div className={['cursor-pointer' , router.pathname=="/#projects" ? "border-b-4 border-teal-500":""].join(" ")}>Projects</div></Link>
             <Link href = "/contact"><div className={['cursor-pointer' , router.pathname=="/contact" ? "border-b-4 border-teal-500":""].join(" ")}>Contacts</div></Link>
           </div>
         </div>
