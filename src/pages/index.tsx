@@ -1,33 +1,42 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import Header from "@/components/header";
-import { Project } from "@/components/project";
+import { Project } from "@/components/Project";
 import { FooterBlob } from "@/components/footerblob";
 import { Footer } from "@/components/footer";
-import { useState } from "react";
+import { Skills } from "@/components/Skills";
+import { Experience } from "@/components/Experience";
+import { Profiles } from "@/components/Profiles";
+import { Contact } from "@/components/Contact";
+import { About } from "@/components/About";
+import { Certifications } from "@/components/Certifications";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { motion } from "framer-motion";
 import Link from "next/link";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const data = [
+  const projects = [
     {
       name: "TaskTribe",
       description: [
-        "Habit building application enabling Group and Partner Accountability and Habit Tracking",
-        "Used Firebase (for backend) ,Tailwind css, Typescript and deployed on vercel",
+        "Habit-building application focused on group and partner accountability with real-time habit tracking.",
+        "Built with React, TypeScript, Firebase, and Tailwind CSS, deployed on Vercel for scalable performance.",
       ],
       image: "/images/projects/tasktribe.png",
       link: "https://task-tribe.vercel.app/splashscreens",
+      technologies: ["React", "Firebase", "TypeScript", "Tailwind CSS"],
     },
     {
       name: "E-Vendor",
       description: [
-        "Implemented authentication via phone and email",
-        "Developed users and vendor management allowing for Wishlist, Edit Users, Add Product, etc",
-        "Created Automatic Location Fetching, Inventory management, utilized React-hot-toast"
+        "Vendor marketplace platform with secure phone and email authentication and end-to-end vendor–user workflows.",
+        "Implemented real-time inventory management, wishlist, vendor dashboards, and location-based services.",
+        "Used Next.js, TypeScript, Firebase, AWS S3, and Tailwind CSS to build a production-ready web application.",
       ],
-      image: "/images/projects/tasktribe.png",
+      image: "/images/projects/evendor.png",
       link: "https://alumniconnect.vercel.app/a",
+      technologies: ["Next.js", "MongoDB", "Node.js", "Express"],
     },
     {
       name: "Housing Data EDA",
@@ -36,8 +45,9 @@ export default function Home() {
         "Developed a pipeline for doing sequence of transformations",
         "Trained model using multiple models and fine-Tuned model using GridSearchCV",
       ],
-      image: "/images/projects/tasktribe.png",
+      image: "/images/projects/eda.png",
       link: "https://github.com/satvikkaurav/housing-data-analysis",
+      technologies: ["Python", "Pandas", "Scikit-learn", "Matplotlib"],
     },
     {
       name: "Sign Language Recognition",
@@ -48,73 +58,138 @@ export default function Home() {
       ],
       image: "/images/projects/tasktribe.png",
       link: "https://github.com/satvikkaurav/sign-language-recg-cnn",
+      technologies: ["Python", "TensorFlow", "OpenCV", "Tkinter"],
     },
   ];
   
   return (
-    <main>
-      <div className="max-w-screen-lg mx-auto">
-        {/* Header */}
-        <Header />
+    <ThemeProvider>
+      <main className="bg-gray-900 dark:bg-gray-50 min-h-screen transition-colors duration-300">
+        <div className="max-w-screen-xl mx-auto">
+          {/* Header */}
+          <Header />
 
-        <div className="flex flex-col sm:flex-row gap-5 pt-4 mt-40 mb-44">
-          <div className="flex gap-5 flex-col justify-center flex-1 px-10">
-            <div className="flex uppercase text-yellow-500 font-medium">
-              Software Developer
-            </div>
-            <div className="flex text-5xl font-medium">
-              Hello, my name is Satvik Kaurav
-            </div>
-            <div className="flex text-gray-500">
-              Short text with details about you, what you do or your
-              professional career. You can add more information on the about
-              page.
-            </div>
-            <div className="flex gap-2">
-              <Link
-                href={
-                  "https://drive.google.com/file/d/1QbeOzCzrGlFU3ooP9CgFZDM-BY99R1yQ/view?usp=drive_link"
-                }
-                target="blank"
+          {/* Hero Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col sm:flex-row gap-5 pt-4 mt-20 pb-20 mb-44 px-4"
+          >
+            <div className="flex gap-5 flex-col justify-center flex-1">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="flex uppercase text-teal-500 dark:text-teal-600 font-medium tracking-wide"
+          >
+            Software Engineer · Backend, Computer Vision & Full-Stack
+          </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                className="flex text-5xl font-medium text-white dark:text-gray-900"
               >
-                <button className="px-6 py-1 bg-teal-500 text-white rounded-lg">
-                  Resume
-                </button>
-              </Link>
-              <Link
-                href={"https://www.linkedin.com/in/satvik-kaurav/"}
-                target="blank"
+                Hello, my name is Satvik Kaurav
+              </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+            className="flex text-gray-400 dark:text-gray-600 max-w-xl"
+          >
+            Software Engineer at Kloudspot with experience in low-latency computer vision systems, distributed backends, and cloud-native products.
+          </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 }}
+                className="flex gap-2"
               >
-                <button className="px-6 py-1 border border-black rounded-lg">
-                  Linkedin
-                </button>
-              </Link>
+                <Link
+                  href="https://drive.google.com/file/d/1Wej-p7lSnZyL6RWRVUXiltZKFANwfXBb/view?usp=sharing"
+                  target="_blank"
+                >
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-6 py-2 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-colors"
+                  >
+                    Resume
+                  </motion.button>
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/satvik-kaurav/"
+                  target="_blank"
+                >
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-6 py-2 border border-white dark:border-gray-900 text-white dark:text-gray-900 rounded-lg hover:bg-white/10 dark:hover:bg-gray-900/10 transition-colors"
+                  >
+                    LinkedIn
+                  </motion.button>
+                </Link>
+              </motion.div>
             </div>
-          </div>
-          <div className="flex flex-column justify-center flex-1 object-cover">
-            <img src="/images/profile_n.svg" className=""></img>
-          </div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-column justify-center flex-1 object-cover"
+            >
+              <img src="/images/profile_n.svg" className="w-full h-auto" alt="Profile" />
+            </motion.div>
+          </motion.div>
+
+          {/* About Section */}
+          <About />
+
+          {/* Skills Section */}
+          <Skills />
+
+          {/* Experience Section */}
+          <Experience />
+
+          {/* Projects Section */}
+          <section id="projects" className="py-20 px-4">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold text-center text-white dark:text-gray-900 mb-2"
+            >
+              Projects
+            </motion.h2>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="w-20 h-1 bg-teal-500 dark:bg-teal-600 mx-auto mb-12"
+            />
+
+            <div className="space-y-12">
+              {projects.map((project, index) => (
+                <Project key={index} data={project} flag={index % 2 === 1} />
+              ))}
+            </div>
+          </section>
+
+          {/* Coding Profiles Section */}
+          <Profiles />
+
+          {/* Certifications Section */}
+          <Certifications />
+
+          {/* Contact Section */}
+          <Contact />
+
+          {/* Footer */}
+          <Footer />
         </div>
-
-        {/*  */}
-       
-        <div  id='projects' className="flex flex-col mt-10">
-          <h2 className="font-semibold mx-auto text-3xl">Projects</h2>
-          <div className="border rounded-sm border-teal-500 mt-1 w-[4rem] mx-auto mb-6"></div>
-
-          <div className="flex flex-col gap-5">
-            {data.map((d, key) => {
-              console.log(key);
-              return <Project flag={key % 2} data={d} key={key} />;
-            })}
-          </div>
-        </div>
-        <a href="#projects"></a>
-
-        {/*  Footer */}
-        <Footer />
-      </div>
-      <FooterBlob />
-    </main>
+        <FooterBlob />
+      </main>
+    </ThemeProvider>
   );
 }
