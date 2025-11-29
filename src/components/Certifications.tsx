@@ -7,15 +7,22 @@ const certifications = [
     title: 'Accelerated Computer Science Fundamentals',
     organization: 'Coursera',
     date: 'Certification',
-    image: '/images/certifications/cs-fundamentals.png',
-    link: '#',
+    image: '/images/certifications/computer_science_fundamentals.png',
+    link: 'https://coursera.org/share/ee8fadb4d7487befbe40049ea8e456ac',
   },
   {
-    title: 'Mathematics for Machine Learning',
+    title: 'Mathematics for Machine Learning : Linear Algebra',
     organization: 'Coursera',
     date: 'Certification',
-    image: '/images/certifications/math-ml.png',
-    link: '#',
+    image: '/images/certifications/mml.png',
+    link: 'https://coursera.org/share/f3695103d5687e9b3c7917be5834596d',
+  },
+  {
+    title: 'Mathematics for Machine Learning : Multivariate Calculus',
+    organization: 'Coursera',
+    date: 'Certification',
+    image: '/images/certifications/mml-mvc.png',
+    link: 'https://coursera.org/share/fecaf8308c88c3ad54fd3b06a5836c71',
   },
 ];
 

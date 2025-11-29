@@ -105,7 +105,7 @@ export function Contact() {
             </div>
 
             <div className="pt-6">
-              <h4 className="text-lg font-medium text-white dark:text-gray-900 mb-4">Follow Me</h4>
+              {/* <h4 className="text-lg font-medium text-white dark:text-gray-900 mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <motion.a
                   href="https://github.com/satvikkaurav"
@@ -147,7 +147,7 @@ export function Contact() {
                     <path d="M10.2 3.6 6 7.8a1.5 1.5 0 1 1-2.1-2.1l5-5a1.5 1.5 0 0 1 2.1 0l9 9a1.5 1.5 0 0 1-2.1 2.1l-7.8-7.8z" />
                   </svg>
                 </motion.a>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>

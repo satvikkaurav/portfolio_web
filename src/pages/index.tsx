@@ -12,6 +12,9 @@ import { Certifications } from "@/components/Certifications";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Metadata } from 'next';
+import Head from 'next/head';
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -65,6 +68,10 @@ export default function Home() {
   return (
     <ThemeProvider>
       <main className="bg-gray-900 dark:bg-gray-50 min-h-screen transition-colors duration-300">
+        <Head>
+          <title>Satvik Kaurav</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        </Head>
         <div className="max-w-screen-xl mx-auto">
           {/* Header */}
           <Header />
