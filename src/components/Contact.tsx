@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { AnimatedSection } from './AnimatedSection';
+import Image from 'next/image';
 
 export function Contact() {
   return (
@@ -105,6 +106,7 @@ export function Contact() {
             </div>
 
             <div className="pt-6">
+              <Image src="/images/contact_us.svg" alt="Follow Me" width={500} height={500} className='w-full h-auto' />
               {/* <h4 className="text-lg font-medium text-white dark:text-gray-900 mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <motion.a
