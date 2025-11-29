@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image'
 
 type Props = {
     key ?: any,
@@ -29,8 +30,8 @@ export const Project = (props: Props) => {
                 View Project</button></Link>
             </div>
             <div className='flex flex-col flex-1 justify-center'>
-              <div className=''>
-                <img src='/images/proj.png' className={props.flag ? 'rounded-l-2xl':'rounded-r-2xl' }></img>
+              <div className="relative h-64 md:h-full rounded-lg overflow-hidden">
+                <Image src='/images/proj.png' className={props.flag ? 'rounded-l-2xl':'rounded-r-2xl' } alt='project image' width={500} height={500} />
               </div>
              
             </div>

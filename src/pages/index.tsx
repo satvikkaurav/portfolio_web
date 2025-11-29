@@ -12,8 +12,8 @@ import { Certifications } from "@/components/Certifications";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Metadata } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -146,7 +146,7 @@ export default function Home() {
               transition={{ delay: 0.6 }}
               className="flex flex-column justify-center flex-1 object-cover"
             >
-              <img src="/images/profile_n.svg" className="w-full h-auto" alt="Profile" />
+              <Image src="/images/profile_n.svg" className="w-full h-auto" alt="Profile" width={500} height={500} />
             </motion.div>
           </motion.div>
 

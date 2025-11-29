@@ -104,8 +104,8 @@ export default function Header() {
                     <span className="relative z-10">{item.name}</span>
                     {activeSection === item.href.replace('#', '') && (
                       <>
-                        <motion.div
-                          layoutId="activeSection"
+                      <motion.div
+                        layoutId="activeSection"
                           className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-gradient-to-r from-purple-400 to-indigo-400"
                           initial={false}
                           transition={{ type: 'spring', stiffness: 380, damping: 30 }}
@@ -113,9 +113,9 @@ export default function Header() {
                         <motion.div
                           className="absolute inset-0 bg-purple-500/10 dark:bg-purple-500/20 rounded-lg"
                           layoutId="activeBg"
-                          initial={false}
-                          transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                        />
+                        initial={false}
+                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                      />
                       </>
                     )}
                     <motion.div

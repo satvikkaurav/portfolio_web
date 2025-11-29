@@ -43,8 +43,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (mounted) {
-      document.documentElement.classList.remove('light', 'dark');
-      document.documentElement.classList.add(theme);
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(theme);
     }
   }, [theme, mounted]);
 
